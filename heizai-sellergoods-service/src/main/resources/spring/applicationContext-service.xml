@@ -8,10 +8,18 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
-	<dubbo:application name="pinyougou-sellergoods-service"/>  
-    <dubbo:registry address="zookeeper://192.168.25.129:2181"/>
-    <dubbo:annotation package="com.pinyougou.sellergoods.service.impl" />  
-   
-   
+	<!-- 扫描Service -->
+	<context:component-scan base-package="com.heizai.sellergoods.service.impl" />
+
+	<!-- 配置dubbo应用服务 -->
+	<dubbo:application name="heizai-sellergoods-service" />
+
+	<!-- dubbo注册中心服务 protocol:使用保存信息的协议 address:zookeeper的ip和端口号 如果是多个集群,192.168.220.118:2181,192.168.220.119:2181,192.168.220.120:2181 -->
+
+	<dubbo:registry protocol="zookeeper" address="192.168.116.137:2181"></dubbo:registry>
+
+	<!-- 在dubbo协议中暴露 20880 name:必须指定dubbo port:当前应用暴露的端口号 -->
+	<dubbo:protocol name="dubbo" port="20889" />
+	<!-- 把代理对象注册到zookeeper中,默认 3秒-->
+	<dubbo:service interface="com.heizai.sellergoods.service.BrandService" ref="brandServiceImpl" timeout="1000000" />
 </beans>

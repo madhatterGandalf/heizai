@@ -90,6 +90,11 @@
 			<artifactId>heizai-sellergoods-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.heizai</groupId>
+			<artifactId>heizai-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
