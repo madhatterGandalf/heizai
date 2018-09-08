@@ -95,7 +95,12 @@
 			<artifactId>heizai-dao</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.heizai</groupId>
+            <artifactId>heizai-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 	<build>
 		<plugins>
 			<plugin>

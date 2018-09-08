@@ -97,7 +97,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.heizai.pojo.TbBrand" >
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.heizai.pojo.TbBrand" >
     insert into tb_brand (id, name, first_char
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{firstChar,jdbcType=VARCHAR}
